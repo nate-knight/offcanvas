@@ -1,41 +1,17 @@
-﻿var app = angular.module('app', []);
+var app = angular.module('app', []);
 
-app.run(function () {
 
- 
-
-  
-});
-
-app.controller('poc', function ($scope) {
-
-    $scope.menuItems = [
-        {
-            "menuTitle": "People",
-            "submenus" :[
-                {
-                    "menuTitle": "This Week",
-                    "submenus": [
-                        { "menuTitle": "Monday" },
-                        { "menuTitle": "Tuesday" }
-                        ]
-                },
-                { "menuTitle": "This Month" },
-                { "menuTitle": "Over/Under Report" },
-                { "menuTitle": "By Person" }
-                ]
-        },
-        { "menuTitle": "Projects" },
-        { "menuTitle": "Teams" },
-        { "menuTitle": "Reports" },
-        { "menuTitle": "TimeClock" },
-        { "menuTitle": "Devices" }
-
-    ];
-
+app.controller('poc', function ($scope, $http) {
    
+    $scope.menuItems = [{ "menuTitle": "People", "submenus": [{ "menuTitle": "This Week", "submenus": [{ "menuTitle": "Monday", "submenus": null }, { "menuTitle": "Tuesday", "submenus": null }] }, { "menuTitle": "This Month", "submenus": [{ "menuTitle": "First Week", "submenus": null }, { "menuTitle": "Second Week", "submenus": null }] }, { "menuTitle": "Over/Under Report", "submenus": null }, { "menuTitle": "By Person", "submenus": null }] }, { "menuTitle": "Projects", "submenus": null }, { "menuTitle": "Teams", "submenus": null }, { "menuTitle": "Reports", "submenus": null }, { "menuTitle": "TimeClock", "submenus": null }];
 
-    $scope.phones = [{ "text": "Super Smart Phone" }, {"text" : "Black Magic Mobile"}]
+    $http.get({
+        url:'/api/menu',
+        method: "GET",
+        params: { user_id: "nate" }
+    }).success(function (data) {
+        $scope.menuItems2 = data;
+    });
 
 
 });
