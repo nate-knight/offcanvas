@@ -23,7 +23,7 @@ namespace bswing_poc.Controllers
       
 
         // GET api/menu
-        public List<MenuItem> Get()
+        public List<MenuItem> Get(string user)
         {
             List<MenuItem> items = new List<MenuItem>();
 
