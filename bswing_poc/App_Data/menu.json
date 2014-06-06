@@ -1,7 +1,28 @@
-﻿[
-	{"title" : "People"},
-	{"title" : "Projects"},
-	{"title" : "Teams"},
-	{"title" : "Reports"},
-	{"title" : "TimeClock"}
-]
+[
+        {
+            "menuTitle": "People",
+            "submenus" :[
+                {
+                    "menuTitle": "This Week",
+                    "submenus": [
+                        { "menuTitle": "Monday" },
+                        { "menuTitle": "Tuesday" }
+                        ]
+                },
+                {
+                    "menuTitle": "This Month",
+                    "submenus" : [
+                        { "menuTitle": "First Week" },
+                        { "menuTitle": "Second Week" }
+                     ]
+                },
+                { "menuTitle": "Over/Under Report" },
+                { "menuTitle": "By Person" }
+                ]
+        },
+        { "menuTitle": "Projects" },
+        { "menuTitle": "Teams" },
+        { "menuTitle": "Reports" },
+        { "menuTitle": "TimeClock" }
+
+ ]
