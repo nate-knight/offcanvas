@@ -1,0 +1,102 @@
+﻿/*
+* Uses Font Awesome and Bootstrap 3
+* Both aren't required for this demo
+*/
+#site-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  
+  height: 1000px; /* Temp: Simulates a tall page. */
+}
+#site-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all;
+ 
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  /*padding: 5% 0;  Temp: Just spacing. */
+}
+.show-nav #site-canvas {
+  
+  
+  -webkit-transform: translate3d(300px, 0, 0);
+  transform: translate3d(300px, 0, 0);
+}
+#site-menu {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: -300px;
+  background: rgb(123,123,123);
+  /*padding: 15px;*/
+}
+
+    #site-menu a
+    {
+        color:#fff;
+        text-decoration:none;
+    }
+    #site-menu ul
+    {
+        list-style-type:none;
+        -webkit-padding-start:0px;
+    }
+
+        #site-menu ul li
+        {
+            line-height:320%;
+            padding-left:30px;
+            border-bottom: 1px solid #fff;
+            
+        }
+
+            #site-menu ul li:hover
+            {
+                font-weight:600;
+            }
+
+.top-bar-bg
+{
+
+    background-color:#000;
+    height:15px;
+}
+
+.title
+{
+    padding:.5em 1.25em;
+    text-align:center;
+}
+
+body {
+  /*box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
+  background-color: rgb(201,207,204);
+  color: #fff;
+}
+
+#hamburger {
+  display: block;
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: 300;
+  color:#fff;
+  position:absolute;
+  top:5px;
+  left:10px;
+}
+
+header
+{
+    background-color:#000;
+}
