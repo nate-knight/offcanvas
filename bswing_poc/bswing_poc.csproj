@@ -198,10 +198,11 @@
     <Content Include="Content\demo.css" />
     <Content Include="Content\icons.css" />
     <Content Include="Content\normalize.css" />
-    <Content Include="Fonts\codedropsicons\codropsicons.svg" />
+    <Content Include="Fonts\codropsicons\codropsicons.svg" />
     <Content Include="Fonts\linecons\linecons.dev.svg" />
     <Content Include="Fonts\linecons\linecons.svg" />
     <Content Include="Fonts\linecons\lte-ie7.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\mlpushmenu.js" />
     <Content Include="Scripts\modernizr.custom.js" />
@@ -267,9 +268,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\menu.json" />
-    <Content Include="Fonts\codedropsicons\codropsicons.eot" />
-    <Content Include="Fonts\codedropsicons\codropsicons.ttf" />
-    <Content Include="Fonts\codedropsicons\codropsicons.woff" />
+    <Content Include="Fonts\codropsicons\codropsicons.eot" />
+    <Content Include="Fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="Fonts\codropsicons\codropsicons.woff" />
     <Content Include="Fonts\linecons\linecons.eot" />
     <Content Include="Fonts\linecons\linecons.ttf" />
     <Content Include="Fonts\linecons\linecons.woff" />

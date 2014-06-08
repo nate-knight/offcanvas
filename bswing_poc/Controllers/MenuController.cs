@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace bswing_poc.Controllers
       
 
         // GET api/menu
-        public List<MenuItem> Get(string user)
+        public List<MenuItem> Get()
         {
             List<MenuItem> items = new List<MenuItem>();
 

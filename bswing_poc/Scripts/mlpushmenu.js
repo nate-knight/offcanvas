@@ -243,8 +243,5 @@
 })(window);
 
 $(document).ready(function () {
-    //load push menu after angular replaces dom
-    new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
-        type: 'cover'
-    });
+    
 });

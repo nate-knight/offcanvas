@@ -1,4 +1,4 @@
-@{
+﻿@{
     Layout = null;
 }
 
@@ -17,11 +17,8 @@
         
 	</head>
 	<body>
-		<div class="container" ng-controller="poc">
-			<!-- Push Wrapper -->
-			<div class="mp-pusher" id="mp-pusher">
-
-				<!-- mp-menu -->
+        <script type="text/ng-template" id="offCanvasMenu.html">
+            <!-- mp-menu -->
 				<nav id="mp-menu" class="mp-menu">
 					<div class="mp-level">
 						<h2 class="">Uber Planning</h2>
@@ -42,7 +39,6 @@
 												</ul>
 											</div>
 										</li>
-										
 									</ul>
 								</div>
 							</li>
@@ -50,6 +46,14 @@
 					</div>
 				</nav>
 				<!-- /mp-menu -->
+        </script>
+
+
+		<div class="container" ng-controller="poc">
+			<!-- Push Wrapper -->
+			<div class="mp-pusher" id="mp-pusher">
+
+				<off-canvas-menu></off-canvas-menu>
 
 				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
 					<div class="scroller-inner">
