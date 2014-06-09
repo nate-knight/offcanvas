@@ -23,15 +23,31 @@ namespace bswing_poc.Controllers
       
 
         // GET api/menu
-        public List<MenuItem> Get()
+        public List<MenuItem> Get(string user)
         {
             List<MenuItem> items = new List<MenuItem>();
+            List<User> users = new List<User>();
 
             using (StreamReader r = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/menu.json")))
             {
                 string json = r.ReadToEnd();
                 items = JsonConvert.DeserializeObject<List<MenuItem>>(json);
             }
+
+            using (StreamReader r = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/users.json")))
+            {
+                string json = r.ReadToEnd();
+                users = JsonConvert.DeserializeObject<List<User>>(json);
+            }
+
+            //var myUser = from u in users
+            //             where u.ID == user
+            //             select u;
+            var myUser = users.SingleOrDefault(u => u.ID == user);
+
+
+         //   var subscriptions = from m in items
+           //                     where m.menuTitle in myUser.
 
             return items;
         }

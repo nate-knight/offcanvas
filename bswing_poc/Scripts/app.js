@@ -20,7 +20,7 @@ app.directive('offCanvasMenu', function ($timeout, $http) {
             $http({
                 method: 'GET',
                 url: 'api/menu',
-                params: { user: query.user }
+                params: { user: query.user || ''}
             }).success(function (data) {
                 $scope.menuItems = data;
             });
