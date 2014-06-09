@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,16 +14,9 @@ namespace bswing_poc.Controllers
 {
     public class MenuController : ApiController
     {
-        //MenuItem[] menuItems = new MenuItem[] 
-        //{ 
-        //    new MenuItem { menuTitle = "People", submenus = [new MenuItem{menuTitle = "This Week"}, new MenuItem{menuTitle = "Next Week"}] }, 
-        //    new MenuItem { menuTitle = "Projects" }, 
-        //    new MenuItem { menuTitle = "Teams" }
-        //};
-      
-
+   
         // GET api/menu
-        public List<MenuItem> Get(string user)
+        public IEnumerable<MenuItem> Get(string user)
         {
             List<MenuItem> items = new List<MenuItem>();
             List<User> users = new List<User>();
@@ -40,56 +33,16 @@ namespace bswing_poc.Controllers
                 users = JsonConvert.DeserializeObject<List<User>>(json);
             }
 
-            //var myUser = from u in users
-            //             where u.ID == user
-            //             select u;
-            var myUser = users.SingleOrDefault(u => u.ID == user);
-
-
-         //   var subscriptions = from m in items
-           //                     where m.menuTitle in myUser.
-
-            return items;
-        }
-
-       
-
-        //public JsonResult Get()
-        //      {
-            //var items = new List<Menu>();
-
-            //movies.Add(new { Title = "Ghostbusters", Genre = "Comedy", Year = 1984 });
-            //movies.Add(new { Title = "Gone with Wind", Genre = "Drama", Year = 1939 });
-            //movies.Add(new { Title = "Star Wars", Genre = "Science Fiction", Year = 1977 });
-
-            //items.Add(new { Title = "People", Submenu = ""});
-
-            //var fileContents = System.IO.File.ReadAllText(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/menu.json"));
-          //  return new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(new { fileContents });
-            //return  Json(fileContents);
-    //    }
+            var subs = from u in users
+                       from usersubscriptions in u.subscriptions
+                       join i in items
+                       on usersubscriptions.Menu equals i.menuTitle
+                       where u.ID == user
+                       select i;
 
       
-
-        // GET api/menu/5
-        public string Get(int id)
-        {
-            return "value";
+            return subs;
         }
 
-        // POST api/menu
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/menu/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/menu/5
-        public void Delete(int id)
-        {
-        }
     }
 }
