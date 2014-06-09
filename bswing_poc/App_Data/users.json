@@ -1,18 +1,18 @@
-﻿[
+[
   { "ID" : "bswing",
     "subscriptions" : [
-      { "menu" : "people" },
-      { "menu" : "projects" },
-      { "menu" : "teams" },
-      { "menu" : "reports" },
-      { "menu" : "timeclock" }
+      { "menu" : "People" },
+      { "menu" : "Projects" },
+      { "menu" : "Teams" },
+      { "menu" : "Reports" },
+      { "menu" : "TimeClock" }
       ]
   },
   { "ID" : "nate",
     "subscriptions" : [
-      { "menu" : "people" },
-      { "menu" : "reports" },
-      { "menu" : "timeclock" }
+      { "menu" : "People" },
+      { "menu" : "Reports" },
+      { "menu" : "TimeClock" }
       ]
   }
 ]
