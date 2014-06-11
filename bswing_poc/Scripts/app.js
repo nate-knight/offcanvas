@@ -10,6 +10,60 @@ app.controller('poc', function ($scope, $http) {
 
 });
 
+
+$(document).ready(function () {
+    var query = parseQuery(document.location.search.substring(1));
+    
+    $.getJSON('api/menu',query, function (data) {
+
+        var html = '<ul>';
+        for (var key in data) {
+            html += buildNode(key, data[key]);
+        }
+        html += '</ul>';
+
+        $("#offCanvasMenu").html(html);
+
+        new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
+            type: 'cover'
+        });
+    });
+
+    function buildNode(key, val) {
+
+        var html = "";
+
+        if (val.hasOwnProperty('menuTitle')) {
+            html += '<li class="icon icon-arrow-left">';
+            html += '<a href="#">' + val.menuTitle + '</a>';
+            html += '<div class="mp-level">';
+            html += '<h2>' + val.menuTitle + '</h2>';
+            html += '<a class="mp-back" href="#">back</a>';
+           
+            console.log(val.menuTitle);
+            if (val.hasOwnProperty('submenus')) {
+                html += "<ul>";
+                for (var subkey in val.submenus) {
+                    html += buildNode(subkey, val.submenus[subkey]);
+                }
+                html += "</ul>";
+            }
+            html += '</div></li>';
+        }
+
+        return html;
+    }
+
+    //var buildMenu = function () {
+        
+    //};
+
+    
+
+    
+
+});
+
 app.directive('offCanvasMenu', function ($timeout, $http) {
     return {
         restrict: 'E',

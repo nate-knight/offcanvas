@@ -1,4 +1,4 @@
-@{
+﻿@{
     Layout = null;
 }
 
@@ -54,7 +54,26 @@
 			<!-- Push Wrapper -->
 			<div class="mp-pusher" id="mp-pusher">
 
-				<off-canvas-menu></off-canvas-menu>
+				@*<off-canvas-menu></off-canvas-menu>*@
+
+                <!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu">
+					<div class="mp-level">
+						<h2 class="">Uber Planning</h2>
+                        <div id="offCanvasMenu"></div>
+						@*<ul>
+							<li class="icon icon-arrow-left">
+								<a href="#">{{m.menuTitle}}</a>
+								<div class="mp-level">
+									<h2>{{m.menuTitle}}</h2>
+									<a class="mp-back" href="#">back</a>
+									
+								</div>
+							</li>
+						</ul>*@
+					</div>
+				</nav>
+				<!-- /mp-menu -->
 
 				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
 					<div class="scroller-inner">
@@ -77,8 +96,8 @@
 		</div><!-- /container -->
 		
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-        <script src="scripts/app.js"></script>
         <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script src="scripts/app.js"></script>
         <script src="scripts/classie.js"></script>
 		<script src="scripts/mlpushmenu.js"></script>
         
