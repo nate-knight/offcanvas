@@ -1,4 +1,4 @@
-﻿var app = angular.module('app', []);
+var app = angular.module('app', []);
 
 
 app.controller('poc', function ($scope, $http) {
@@ -53,14 +53,6 @@ $(document).ready(function () {
 
         return html;
     }
-
-    //var buildMenu = function () {
-        
-    //};
-
-    
-
-    
 
 });
 
