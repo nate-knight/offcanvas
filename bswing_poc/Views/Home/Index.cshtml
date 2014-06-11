@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -13,80 +13,35 @@
 		<link rel="stylesheet" type="text/css" href="content/demo.css" />
 		<link rel="stylesheet" type="text/css" href="content/icons.css" />
 		<link rel="stylesheet" type="text/css" href="content/component.css" />
+        <link rel="stylesheet" type="text/css" href="content/bswing.css" />
 		<script src="scripts/modernizr.custom.js"></script>
         
 	</head>
 	<body>
 
-        <script type="text/ng-template" id="offCanvasMenu.html">
-            <!-- mp-menu -->
-				<nav id="mp-menu" class="mp-menu">
-					<div class="mp-level">
-						<h2 class="">Uber Planning</h2>
-						<ul>
-							<li class="icon icon-arrow-left" ng-repeat="m in menuItems">
-								<a href="#">{{m.menuTitle}}</a>
-								<div class="mp-level">
-									<h2>{{m.menuTitle}}</h2>
-									<a class="mp-back" href="#">back</a>
-									<ul >
-										<li class="icon icon-arrow-left" ng-repeat="n in m.submenus">
-											<a href="#">{{n.menuTitle}}</a>
-											<div class="mp-level">
-												<h2>{{n.menuTitle}}</h2>
-												<a class="mp-back" href="#">back</a>
-												<ul>
-                                                    <li ng-repeat="o in n.submenus"><a href="#">{{o.menuTitle}}</a></li>
-												</ul>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</nav>
-				<!-- /mp-menu -->
-        </script>
-
 
 		<div class="container" ng-controller="poc">
-			<!-- Push Wrapper -->
 			<div class="mp-pusher" id="mp-pusher">
 
-				@*<off-canvas-menu></off-canvas-menu>*@
-
-                <!-- mp-menu -->
-				<nav id="mp-menu" class="mp-menu">
+                <nav id="mp-menu" class="mp-menu">
 					<div class="mp-level">
 						<h2 class="">Uber Planning</h2>
                         <div id="offCanvasMenu"></div>
-						@*<ul>
-							<li class="icon icon-arrow-left">
-								<a href="#">{{m.menuTitle}}</a>
-								<div class="mp-level">
-									<h2>{{m.menuTitle}}</h2>
-									<a class="mp-back" href="#">back</a>
-									
-								</div>
-							</li>
-						</ul>*@
+						
 					</div>
 				</nav>
-				<!-- /mp-menu -->
+				
+                <a href="#" id="trigger" class="menu-trigger"></a>
 
 				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
+                    
+                    <header>
+                        Uber Planning
+                    </header>
+
 					<div class="scroller-inner">
 						<!-- Top Navigation -->
 						<div class="codrops-top clearfix">
-							
-						</div>
-						
-						<div class="content clearfix">
-							<div class="block block-40 clearfix">
-								<p><a href="#" id="trigger" class="menu-trigger"></a></p>
-								
-							</div>
 							
 						</div>
 					</div><!-- /scroller-inner -->
