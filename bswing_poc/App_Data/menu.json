@@ -1,7 +1,6 @@
 [
         {
             "menuTitle": "People",
-			"level": "top",
             "submenus" :[
                 {
                     "menuTitle": "This Week",
@@ -21,13 +20,8 @@
                 { "menuTitle": "By Person" }
                 ]
         },
-        { "menuTitle": "Projects",
-		  "level": "top" },
-        { "menuTitle": "Teams",
-		  "level": "top" },
-        { "menuTitle": "Reports",
-		  "level": "top" },
-        { "menuTitle": "TimeClock",
-		  "level": "top" }
-
+        { "menuTitle": "Projects"},
+        { "menuTitle": "Teams"},
+        { "menuTitle": "Reports"},
+        { "menuTitle": "TimeClock"}
  ]
