@@ -22,7 +22,7 @@ html, body, .container, .scroller {
 .container {
 	position: relative;
 	overflow: hidden;
-	background: #34495e;
+	background: #fff; /*#34495e;*/
 }
 
 .menu-trigger {
@@ -87,7 +87,7 @@ html, body, .container, .scroller {
 
 .mp-pusher::after,
 .mp-level::after {
-	background: rgba(0,0,0,0.3);
+	/*background: rgba(0,0,0,0.3);*/
 	-webkit-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
 	-moz-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
 	transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
@@ -210,7 +210,19 @@ html, body, .container, .scroller {
 	display: block;
 	padding: 0.7em 1em 0.7em 1.8em;
 	outline: none;
-	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+	box-shadow: inset 0 -1px rgb(255,255,255);/*inset 0 -1px rgba(0,0,0,0.2);*/
+	text-shadow: 0 0 1px rgba(255,255,255,0.1);
+	font-size: 1.4em;
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+	-moz-transition: background 0.3s, box-shadow 0.3s;
+	transition: background 0.3s, box-shadow 0.3s;
+}
+
+.mp-menu ul li.title {
+	display: block;
+	padding: 0.7em 1em 0.7em 1.8em;
+	outline: none;
+	box-shadow: inset 0 -1px rgb(255,255,255);/*inset 0 -1px rgba(0,0,0,0.2);*/
 	text-shadow: 0 0 1px rgba(255,255,255,0.1);
 	font-size: 1.4em;
 	-webkit-transition: background 0.3s, box-shadow 0.3s;
@@ -220,9 +232,9 @@ html, body, .container, .scroller {
 
 .mp-menu ul li::before {
 	position: absolute;
-	left: 10px;
+	left: 265px; /*10px*/
 	z-index: -1;
-	color: rgba(0,0,0,0.2);
+	color: rgb(255,255,255);/*rgba(0,0,0,0.2);*/
 	line-height: 3.5;
 }
 
