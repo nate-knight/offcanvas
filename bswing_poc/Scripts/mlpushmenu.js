@@ -242,6 +242,3 @@
 
 })(window);
 
-$(document).ready(function () {
-    
-});
