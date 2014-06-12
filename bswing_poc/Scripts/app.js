@@ -16,7 +16,10 @@ $(document).ready(function () {
     
     $.getJSON('api/menu',query, function (data) {
 
+        //var html = '<ul>';
         var html = '<ul>';
+        //html += '<li class="icon icon-arrow-left"><a href="#">Uber Planner</a><div class="mp-level"><a class="mp-back" href="#">back</a></li>';
+        html += '<li class="title">Uber Planner<div class="mp-level"><a class="mp-back" href="#">back</a></li>';
         for (var key in data) {
             html += buildNode(key, data[key]);
         }
@@ -34,11 +37,13 @@ $(document).ready(function () {
         var html = "";
 
         if (val.hasOwnProperty('menuTitle')) {
-            html += '<li class="icon icon-arrow-left">';
+            html += '<li class="icon icon-arrow-right-4">';
             html += '<a href="#">' + val.menuTitle + '</a>';
+
             html += '<div class="mp-level">';
-            html += '<h2>' + val.menuTitle + '</h2>';
+            //html += '<a class="mp-back" href="#">back</a>';
             html += '<a class="mp-back" href="#">back</a>';
+            html += '<h2>' + val.menuTitle + '</h2>';
            
             console.log(val.menuTitle);
             if (val.hasOwnProperty('submenus')) {
