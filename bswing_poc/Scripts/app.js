@@ -19,7 +19,8 @@ $(document).ready(function () {
         //var html = '<ul>';
         var html = '<ul>';
         //html += '<li class="icon icon-arrow-left"><a href="#">Uber Planner</a><div class="mp-level"><a class="mp-back" href="#">back</a></li>';
-        html += '<li class="title">Uber Planner<div class="mp-level"><a class="mp-back" href="#">back</a></li>';
+        //html += '<li class="title">Uber Planner<div class="mp-level"><a class="mp-back" href="#">Back1</a></li>';
+        html += '<li class="title">Uber Planner<div class="mp-level"><a class="mp-back" href="#">Back1</a></li>';
         for (var key in data) {
             html += buildNode(key, data[key]);
         }
@@ -42,7 +43,7 @@ $(document).ready(function () {
 
             html += '<div class="mp-level">';
             //html += '<a class="mp-back" href="#">back</a>';
-            html += '<a class="mp-back" href="#">back</a>';
+            html += '<a class="mp-back" href="#">Back</a>';
             html += '<h2>' + val.menuTitle + '</h2>';
            
             console.log(val.menuTitle);
