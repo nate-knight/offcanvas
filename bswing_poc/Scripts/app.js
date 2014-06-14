@@ -21,13 +21,14 @@ $(document).ready(function () {
 
         var html = "";
 
-        if (val.hasOwnProperty('menuTitle')) {
-            html += '<li class="icon icon-arrow-right-4">';
-            html += '<a href="#">' + val.menuTitle + '</a>';
-            html += '<div class="mp-level">';
-            //html += '<div class="' + (val.url ? '' : 'mp-level') + '">';
-           
-            if (val.hasOwnProperty('submenus')) {
+        if (val.menuTitle) {
+            //html += '<li class="' + (val.submenus ? 'icon icon-arrow-right-4' : '') + '">';
+            html += '<li class="' + (val.submenus ? 'icon icon-arrow-right-4' : '') + '">';
+            //html += '<a href="#">' + val.menuTitle + '</a>';
+            html += '<a href="' + (val.url || '#') + '">' + val.menuTitle + '</a>';
+            
+            if (val.submenus) {
+                html += '<div class="mp-level">';
                 html += '<ul>';
                 //spacer
                 html += "<li class='top-spacer'></li>";
@@ -40,11 +41,12 @@ $(document).ready(function () {
                     html += buildNode(subkey, val.submenus[subkey]);
                 }
                 
-                html += '</ul>';
+                html += '</ul></div>';
+                
             }
 
             //html += "<div><div>";
-            html += '</div></li>';
+            html += '</li>';
         }
         return html;
     }

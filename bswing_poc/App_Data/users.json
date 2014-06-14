@@ -14,5 +14,10 @@
       { "menu" : "Reports" },
       { "menu" : "TimeClock" }
       ]
+  },
+  { "ID" : "bob",
+    "subscriptions" : [
+      { "menu" : "Projects" }
+      ]
   }
 ]
