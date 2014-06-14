@@ -7,7 +7,9 @@ namespace bswing_poc.Models
 {
     public class MenuItem
     {
+        
         public string menuTitle { get; set; }
+        public string url { get; set; }
         public MenuItem[] submenus { get; set; }
     }
 }

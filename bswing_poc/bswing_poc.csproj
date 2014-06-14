@@ -191,7 +191,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Content\bswing.css" />
     <Content Include="Content\component.css" />
-    <Content Include="Content\demo.css" />
     <Content Include="Content\icons.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Fonts\codropsicons\codropsicons.svg" />
@@ -202,11 +201,8 @@
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\mlpushmenu.js" />
     <Content Include="Scripts\modernizr.custom.js" />
-    <Content Include="Scripts\scotch.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\demo_bak.css" />
-    <Content Include="Content\scotch.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

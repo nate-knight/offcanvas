@@ -1,26 +1,12 @@
-var app = angular.module('app', []);
-
-
-app.controller('poc', function ($scope, $http) {
-   
-    //$scope.menuItemsa = [{ "menuTitle": "People", "submenus": [{ "menuTitle": "This Week", "submenus": [{ "menuTitle": "Monday", "submenus": null }, { "menuTitle": "Tuesday", "submenus": null }] }, { "menuTitle": "This Month", "submenus": [{ "menuTitle": "First Week", "submenus": null }, { "menuTitle": "Second Week", "submenus": null }] }, { "menuTitle": "Over/Under Report", "submenus": null }, { "menuTitle": "By Person", "submenus": null }] }, { "menuTitle": "Projects", "submenus": null }, { "menuTitle": "Teams", "submenus": null }, { "menuTitle": "Reports", "submenus": null }, { "menuTitle": "TimeClock", "submenus": null }];
-
-    
-
-
-});
-
 
 $(document).ready(function () {
     var query = parseQuery(document.location.search.substring(1));
     
     $.getJSON('api/menu',query, function (data) {
 
-        //var html = '<ul>';
         var html = '<ul>';
-        //html += '<li class="icon icon-arrow-left"><a href="#">Uber Planner</a><div class="mp-level"><a class="mp-back" href="#">back</a></li>';
-        //html += '<li class="title">Uber Planner<div class="mp-level"><a class="mp-back" href="#">Back1</a></li>';
-        html += '<li class="title">Uber Planner<div class="mp-level"><a class="mp-back" href="#">Back1</a></li>';
+        html += '<li class="top-spacer"></li>';
+        html += '<li class="title">Uber Planner</li>';
         for (var key in data) {
             html += buildNode(key, data[key]);
         }
@@ -28,9 +14,7 @@ $(document).ready(function () {
 
         $("#offCanvasMenu").html(html);
 
-        new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
-            type: 'cover'
-        });
+        new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), { type: 'cover'});
     });
 
     function buildNode(key, val) {
@@ -40,58 +24,30 @@ $(document).ready(function () {
         if (val.hasOwnProperty('menuTitle')) {
             html += '<li class="icon icon-arrow-right-4">';
             html += '<a href="#">' + val.menuTitle + '</a>';
-
             html += '<div class="mp-level">';
-            //html += '<a class="mp-back" href="#">back</a>';
-            html += '<a class="mp-back" href="#">Back</a>';
-            html += '<h2>' + val.menuTitle + '</h2>';
+            //html += '<div class="' + (val.url ? '' : 'mp-level') + '">';
            
-            console.log(val.menuTitle);
             if (val.hasOwnProperty('submenus')) {
-                html += "<ul>";
+                html += '<ul>';
+                //spacer
+                html += "<li class='top-spacer'></li>";
+                //back button
+                html += '<li class="icon icon-arrow-left mp-back"><a href="#">Back</a></li>';
+                //category title
+                html += '<li class="mp-cat-title"><a href="' + (val.url || '#') +  '">' + val.menuTitle + '</a></li>';
+
                 for (var subkey in val.submenus) {
                     html += buildNode(subkey, val.submenus[subkey]);
                 }
-                html += "</ul>";
+                
+                html += '</ul>';
             }
+
+            //html += "<div><div>";
             html += '</div></li>';
         }
-
         return html;
     }
-
-});
-
-app.directive('offCanvasMenu', function ($timeout, $http) {
-    return {
-        restrict: 'E',
-        templateUrl: 'offCanvasMenu.html',
-        controller: function ($scope) {
-            //get querystring
-            var query = parseQuery(document.location.search.substring(1));
-            $http({
-                method: 'GET',
-                url: 'api/menu',
-                params: { user: query.user || ''}
-            }).success(function (data) {
-                $scope.menuItems = data;
-            });
-        },
-        link: function postLink(elem, attrs, transclude) {
-            $timeout(function () {
-                $timeout(function () {
-                    // This code will run after
-                    // templateUrl has been loaded, cloned
-                    // and transformed by directives.
-                    // and properly rendered by the browser
-                    //load push menu after angular replaces dom
-                    new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'), {
-                        type: 'cover'
-                    });
-                }, 0);
-            }, 0);
-        }
-    };
 });
 
 function parseQuery(qstr) {

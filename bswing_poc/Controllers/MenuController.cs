@@ -9,7 +9,6 @@ using System.Web.Mvc;
 using bswing_poc.Models;
 using Newtonsoft.Json;
 
-
 namespace bswing_poc.Controllers
 {
     public class MenuController : ApiController
@@ -18,20 +17,9 @@ namespace bswing_poc.Controllers
         // GET api/menu
         public IEnumerable<MenuItem> Get(string user)
         {
-            List<MenuItem> items = new List<MenuItem>();
-            List<User> users = new List<User>();
-
-            using (StreamReader r = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/menu.json")))
-            {
-                string json = r.ReadToEnd();
-                items = JsonConvert.DeserializeObject<List<MenuItem>>(json);
-            }
-
-            using (StreamReader r = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/users.json")))
-            {
-                string json = r.ReadToEnd();
-                users = JsonConvert.DeserializeObject<List<User>>(json);
-            }
+                       
+            List<MenuItem> items = GetDataFromJson<MenuItem>("menu.json");
+            List<User> users = GetDataFromJson<User>("users.json");
 
             var subs = from u in users
                        from usersubscriptions in u.subscriptions
@@ -40,9 +28,23 @@ namespace bswing_poc.Controllers
                        where u.ID == user
                        select i;
 
-      
             return subs;
         }
 
+        // Get api/menu without user data passed. return null
+        public IEnumerable<MenuItem> Get()
+        {
+            return null; 
+        }
+
+        private List<T> GetDataFromJson<T>(string fileName){
+            List<T> myList = new List<T>();
+            using (StreamReader r = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(@"~/App_Data/" + fileName)))
+            {
+                string json = r.ReadToEnd();
+                myList = JsonConvert.DeserializeObject<List<T>>(json);
+            }
+            return myList;
+        }
     }
 }

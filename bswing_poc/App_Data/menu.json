@@ -1,27 +1,42 @@
-[
-        {
-            "menuTitle": "People",
-            "submenus" :[
+[		
+		{ "menuTitle": "People",
+          "submenus" :[
                 {
                     "menuTitle": "This Week",
-                    "submenus": [
-                        { "menuTitle": "Monday" },
-                        { "menuTitle": "Tuesday" }
-                        ]
+					"url": "People/ThisWeek"
                 },
                 {
                     "menuTitle": "This Month",
-                    "submenus" : [
-                        { "menuTitle": "First Week" },
-                        { "menuTitle": "Second Week" }
-                     ]
+					"url" : "People/ThisMonth"
                 },
                 { "menuTitle": "Over/Under Report" },
                 { "menuTitle": "By Person" }
-                ]
+          ]
         },
-        { "menuTitle": "Projects"},
-        { "menuTitle": "Teams"},
-        { "menuTitle": "Reports"},
+        { "menuTitle": "Projects",
+		  "submenus": [
+			{"menuTitle" : "Whole Foods Redesign"},
+			{"menuTitle" : "Cook With Me!"},
+			{"menuTitle" : "[Another Project]"},
+			{"menuTitle" : "[Another Project]"},
+			{"menuTitle" : "[Another Project]"},
+			{"menuTitle" : "[Another Project]"}
+		  ]
+		},
+        { "menuTitle": "Teams",
+		  "submenus" : [
+			{"menuTitle" : "UX Design"},
+			{"menuTitle" : "Development"},
+			{"menuTitle" : "Research"},
+			{"menuTitle" : "Visual Design"},
+		  ]	
+		},
+        { "menuTitle": "Reports",
+		  "submenus" : [
+			{"menuTitle" : "Project Performance"},
+			{"menuTitle" : "Team Performance"},
+			{"menuTitle" : "Projections"},
+		  ]
+		},
         { "menuTitle": "TimeClock"}
  ]
