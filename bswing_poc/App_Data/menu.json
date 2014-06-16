@@ -3,32 +3,49 @@
           "submenus" :[
                 {
                     "menuTitle": "This Week",
-					"url": "People/ThisWeek"
+					"url": "/People/ThisWeek"
                 },
                 {
                     "menuTitle": "This Month",
-					"url" : "People/ThisMonth"
+					"url" : "/People/ThisMonth"
                 },
-                { "menuTitle": "Over/Under Report" },
-                { "menuTitle": "By Person" }
+                { "menuTitle": "Over/Under Report",
+				   url: "/People/OverUnderReport" 
+				},
+                { "menuTitle": "By Person",
+				  "url" : "/People/ByPerson" 
+				}
           ]
         },
         { "menuTitle": "Projects",
 		  "submenus": [
-			{"menuTitle" : "Whole Foods Redesign"},
-			{"menuTitle" : "Cook With Me!"},
-			{"menuTitle" : "[Another Project]"},
-			{"menuTitle" : "[Another Project]"},
-			{"menuTitle" : "[Another Project]"},
-			{"menuTitle" : "[Another Project]"}
+			{
+			 "menuTitle" : "Whole Foods Redesign",
+			 "url" : "/Projects/WholeFoods"
+			},
+			{"menuTitle" : "Cook With Me!",
+			 "url" : "/Projects/CookWithMe"
+			},
+			{"menuTitle" : "[Another Project]",
+			 "url" : "/Projects/AnotherProject"},
+			{"menuTitle" : "[Another Project]",
+			"url" : "/Projects/AnotherProject"},
+			{"menuTitle" : "[Another Project]",
+			"url" : "/Projects/AnotherProject"},
+			{"menuTitle" : "[Another Project]",
+			"url" : "/Projects/AnotherProject"}
 		  ]
 		},
         { "menuTitle": "Teams",
 		  "submenus" : [
-			{"menuTitle" : "UX Design"},
-			{"menuTitle" : "Development"},
-			{"menuTitle" : "Research"},
-			{"menuTitle" : "Visual Design"},
+			{"menuTitle" : "UX Design",
+			 "url" : "/Teams/UXDesign"},
+			{"menuTitle" : "Development",
+			"url" : "/Teams/Development"},
+			{"menuTitle" : "Research",
+			"url": "/Teams/Research"},
+			{"menuTitle" : "Visual Design",
+			"url": "/Teams/VisualDesign"}
 		  ]	
 		},
         { "menuTitle": "Reports",
